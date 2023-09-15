@@ -19,3 +19,12 @@ VolleyBook is the name of the application.
 
 implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
 implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
+
+
+Useful Git Commands:
+to connect to repo, do git cline "https link"
+to commit changes use git commit -m "Message"
+to push changes to the repo, use git push
+to change/create new branch use git checkout -b newbranch
+to just change into different branch use git checkout
+
