@@ -27,4 +27,8 @@ to commit changes use git commit -m "Message"
 to push changes to the repo, use git push
 to change/create new branch use git checkout -b newbranch
 to just change into different branch use git checkout
+to add all changes, like a new file, use git add . 
+
+Lucid Chart for our project, this is widely open to changes: 
+https://lucid.app/lucidchart/5c931c40-f9d5-49d5-b083-d130e838ee2e/edit?viewport_loc=878%2C-863%2C4103%2C2091%2C0_0&invitationId=inv_a06efd05-8e3a-4cde-ae68-5c8b82fcc216
 
