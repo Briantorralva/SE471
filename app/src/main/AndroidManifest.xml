@@ -13,6 +13,21 @@
         android:theme="@style/Theme.VolleyBook"
         tools:targetApi="31">
         <activity
+            android:name=".TeamB"
+            android:exported="false" />
+        <activity
+            android:name=".TeamA"
+            android:exported="false" />
+        <activity
+            android:name=".GamePage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

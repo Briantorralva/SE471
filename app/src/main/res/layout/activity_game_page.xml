@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".GamePage">
+
+<!-- Box 1 -->
+<LinearLayout
+    android:id="@+id/clickableBox"
+    android:layout_width="245dp"
+    android:layout_height="136dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="240dp"
+    android:layout_marginTop="469dp"
+    android:background="@drawable/clickable_box_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="TeamA"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/team_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/iconDescription"
+        android:src="@drawable/team_icon" />
+
+    <!-- Team Name -->
+    <TextView
+        android:id="@+id/team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="8dp"
+        android:text="@string/TeamA"
+        android:textSize="30sp" />
+
+    <!-- Plus and Minus Buttons for Box 1 -->
+
+</LinearLayout>
+
+<!-- Box 2 -->
+    <LinearLayout
+        android:id="@+id/clickableBox2"
+        android:layout_width="232dp"
+        android:layout_height="132dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="820dp"
+        android:layout_marginTop="472dp"
+        android:background="@drawable/clickable_box_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="TeamB"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/team_icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/team_icon" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/team_name2"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingTop="8dp"
+            android:text="@string/TeamB"
+            android:textSize="30sp" />
+
+        <!-- Plus and Minus Buttons for Box 2 -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="204dp"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="386dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <!-- Minus Button -->
+
+        <!-- Plus Button -->
+        <Button
+            android:id="@+id/minus_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/plus_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="238dp"
+    android:layout_height="58dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:layout_marginTop="398dp"
+    android:layout_marginEnd="271dp"
+    android:gravity="end"
+    android:orientation="horizontal">
+
+    <!-- Minus Button -->
+    <Button
+        android:id="@+id/minus_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="30sp"/>
+
+    <!-- Plus Button -->
+    <Button
+        android:id="@+id/plus_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+
+        android:textSize="30sp"/>
+</LinearLayout>
+
+<RelativeLayout
+    android:id="@+id/substituteBox"
+    android:layout_width="311dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="81dp"
+    android:layout_marginBottom="48dp"
+    android:background="@drawable/clickable_box_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="16dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/substitute_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/iconDescription"
+        android:src="@drawable/substitute_icon" />
+
+    <!-- Team Name -->
+    <TextView
+        android:id="@+id/substitute_name"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/substitute_icon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-57dp"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Substitute"
+        android:textSize="30sp" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TimeOut"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginBottom="712dp"
+        android:background="@drawable/clickable_box_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="16dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/timeout_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/timeout" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/Time_Out"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeout_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-47dp"
+            android:layout_marginEnd="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Time Out"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
