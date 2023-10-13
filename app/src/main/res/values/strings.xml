@@ -44,11 +44,8 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="logo_description">App logo</string>
-    <string name="HomeTeam">Home Team</string>
-    <string name="AwayTeam">Away Team</string>
-    <string name="HomeButton">Home</string>
-    <string name="square_button2">Away</string>
-    <string name="PlusButton">+</string>
-    <string name="MinusButton">-</string>
-    <string name="TimeOut">Time Out</string>
+    <string name="TeamA">Team A</string>
+    <string name="iconDescription">icon</string>
+    <string name="TeamB">Team B</string>
+
 </resources>
