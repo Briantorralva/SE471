@@ -114,7 +114,8 @@ tools:context=".GamePage">
             android:layout_height="wrap_content"
             android:text="-"
             android:textColor="@color/Ebony"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            />
 
         <Button
             android:id="@+id/plus_button1"
@@ -122,7 +123,8 @@ tools:context=".GamePage">
             android:layout_height="wrap_content"
             android:text="+"
             android:textColor="@color/Ebony"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+             />
     </LinearLayout>
 
     <LinearLayout
@@ -143,7 +145,8 @@ tools:context=".GamePage">
             android:layout_height="wrap_content"
             android:text="-"
             android:textColor="@color/Ebony"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            />
 
         <!-- Plus Button -->
         <Button
@@ -152,7 +155,8 @@ tools:context=".GamePage">
             android:layout_height="wrap_content"
             android:text="+"
             android:textColor="@color/Ebony"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            />
     </LinearLayout>
 
     <RelativeLayout
@@ -226,5 +230,17 @@ tools:context=".GamePage">
             android:textSize="30sp" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/scoreA"
+        android:layout_width="134dp"
+        android:layout_height="107dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="790dp"
+        android:layout_marginBottom="775dp"
+        android:text="0"
+        android:textSize="30sp"/>
+
 
 </RelativeLayout>
