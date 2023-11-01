@@ -19,9 +19,9 @@ tools:context=".GamePage">
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="321dp"
-        android:layout_marginEnd="620dp"
+        android:layout_marginEnd="640dp"
         android:layout_marginBottom="300dp"
         android:background="@drawable/clickable_box_background"
         android:clickable="true"
@@ -62,7 +62,7 @@ tools:context=".GamePage">
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="660dp"
+        android:layout_marginStart="640dp"
         android:layout_marginTop="321dp"
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="300dp"
@@ -235,12 +235,39 @@ tools:context=".GamePage">
         android:id="@+id/scoreA"
         android:layout_width="134dp"
         android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="790dp"
-        android:layout_marginBottom="775dp"
+        android:layout_marginStart="513dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="640dp"
+        android:layout_marginBottom="777dp"
+        android:background="@drawable/clickable_box_background"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="0"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
+    <TextView
+        android:id="@+id/scoreB"
+        android:layout_width="134dp"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="640dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="506dp"
+        android:layout_marginBottom="777dp"
+        android:background="@drawable/clickable_box_background2"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="30sp" />
 
 </RelativeLayout>
+
+
+
