@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 public class GamePage extends AppCompatActivity {
 
-    public int count = 0;
-    private TextView valueTextView;
+    public int countA = 0;
+    public int countB = 0;
+    private TextView valueTextViewA;
+    private TextView valueTextViewB;
     private Button incrementButton;
     private Button decrementButton;
 
@@ -20,38 +22,38 @@ public class GamePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_page);
 
-        valueTextView = findViewById(R.id.scoreA);
+        valueTextViewA = findViewById(R.id.scoreA);
         incrementButton = findViewById(R.id.plus_button1);
 
         incrementButton.setOnClickListener(v -> {
-            count++;
-            valueTextView.setText(String.valueOf(count));
+            countA++;
+            valueTextViewA.setText(String.valueOf(countA));
         });
 
-        valueTextView = findViewById(R.id.scoreA);
+        valueTextViewB = findViewById(R.id.scoreB);
         incrementButton = findViewById(R.id.plus_button2);
 
         incrementButton.setOnClickListener(v -> {
-                count++;
-            valueTextView.setText(String.valueOf(count));
+                countB++;
+            valueTextViewB.setText(String.valueOf(countB));
         });
 
-        valueTextView = findViewById(R.id.scoreA);
+        valueTextViewA = findViewById(R.id.scoreA);
         incrementButton = findViewById(R.id.minus_button1);
 
         incrementButton.setOnClickListener(v -> {
-            if(count > 0)
-                count--;
-            valueTextView.setText(String.valueOf(count));
+            if(countA > 0)
+                countA--;
+            valueTextViewA.setText(String.valueOf(countA));
         });
 
-        valueTextView = findViewById(R.id.scoreA);
+        valueTextViewB = findViewById(R.id.scoreB);
         incrementButton = findViewById(R.id.minus_button2);
 
         incrementButton.setOnClickListener(v -> {
-            if(count > 0)
-                count--;
-            valueTextView.setText(String.valueOf(count));
+            if(countB > 0)
+                countB--;
+            valueTextViewB.setText(String.valueOf(countB));
         });
 
     }
