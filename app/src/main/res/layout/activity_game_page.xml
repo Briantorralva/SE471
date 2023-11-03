@@ -8,6 +8,20 @@ android:layout_height="match_parent"
 tools:context=".GamePage">
 
 <!-- Box 1 -->
+<LinearLayout
+    android:id="@+id/clickableBox"
+    android:layout_width="245dp"
+    android:layout_height="136dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="240dp"
+    android:layout_marginTop="469dp"
+    android:background="@color/red"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="TeamA"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <!-- Box 2 -->
 
@@ -60,6 +74,9 @@ tools:context=".GamePage">
         android:layout_height="280dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="820dp"
+        android:layout_marginTop="472dp"
+        android:background="@color/blue"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="640dp"
@@ -100,6 +117,8 @@ tools:context=".GamePage">
         android:layout_height="67dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="392dp"
         android:layout_marginStart="299dp"
         android:layout_marginTop="264dp"
         android:gravity="end"
