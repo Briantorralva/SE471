@@ -7,9 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import android.widget.Toast;
+
+
 public class TeamA extends AppCompatActivity {
     private PlayerLinkedList playerLinkedList; // Declare PlayerLinkedList
-    private static final String PREFS_NAME = "PlayerData";
+    private static final String PREFS_NAME = "TeamAData";
+    private static final String JSON_FILE_NAME_A = "team_a_players.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +31,17 @@ public class TeamA extends AppCompatActivity {
 
         // Load previously saved player names
         loadPlayerNames();
-    }
+
+
+        SharedPreferences prefs = getSharedPreferences("TeamAData", MODE_PRIVATE);
+        boolean isTimeoutButton1Enabled = prefs.getBoolean("timeoutButton1Enabled", true);
+        boolean isTimeoutButton2Enabled = prefs.getBoolean("timeoutButton2Enabled", true);
+
+        findViewById(R.id.TeamATimeOut1).setEnabled(isTimeoutButton1Enabled);
+        findViewById(R.id.TeamATimeOut2).setEnabled(isTimeoutButton2Enabled);
+
+
+}
 
     public void TeamAReturnButton(View v) {
         // Return to the game_page
@@ -52,10 +70,25 @@ public class TeamA extends AppCompatActivity {
 
         // Display the players (optional)
         playerLinkedList.displayPlayers();
+
+        String json = playerLinkedList.toJson();
+        saveJsonToFile(json, JSON_FILE_NAME_A);
     }
 
-    private void savePlayerNames(String[] playerNames) {
-        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+    private void saveJsonToFile(String json, String fileName) {
+        try {
+            File file = new File(getFilesDir(), fileName);
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(json);
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void savePlayerNames(String[] playerNames) {
+        SharedPreferences.Editor editor = getSharedPreferences("TeamAData", MODE_PRIVATE).edit();
+
         for (int i = 0; i < playerNames.length; i++) {
             editor.putString("player" + i, playerNames[i]);
         }
@@ -63,7 +96,11 @@ public class TeamA extends AppCompatActivity {
     }
 
     private void loadPlayerNames() {
-        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("TeamAData", MODE_PRIVATE);
+        String json = loadJsonFromFile(JSON_FILE_NAME_A);
+        if (json != null) {
+            playerLinkedList.fromJson(json);
+        }
         for (int i = 0; i < 6; i++) {
             String playerName = prefs.getString("player" + i, "");
             int resourceId = getResources().getIdentifier("Box" + (i + 1), "id", getPackageName());
@@ -71,4 +108,72 @@ public class TeamA extends AppCompatActivity {
             editText.setText(playerName);
         }
     }
+
+    private String loadJsonFromFile(String fileName) {
+        try {
+            File file = new File(getFilesDir(), fileName);
+            StringBuilder json = new StringBuilder();
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                json.append(scanner.nextLine());
+            }
+            scanner.close();
+            return json.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+    private int timeoutsUsed = 0;
+    public void TeamATimeOut1(View v) {
+        if (timeoutsUsed < 2) { // Check if there are timeouts left
+            v.setEnabled(false); // Disable the button
+            timeoutsUsed++; // Increment the timeouts used
+            saveTimeoutButtonsState();
+
+        } else {
+            // Display a message using a Toast
+            Toast.makeText(this, "No more timeouts available for Team A", Toast.LENGTH_SHORT).show();
+        }
+        checkBothTimeoutsUsed();
+
+        v.setEnabled(false);
+    }
+
+    public void TeamATimeOut2(View v) {
+        if (timeoutsUsed < 2) { // Check if there are timeouts left
+            v.setEnabled(false); // Disable the button
+            timeoutsUsed++; // Increment the timeouts used
+            saveTimeoutButtonsState();
+
+        } else {
+            // Display a message using a Toast
+            Toast.makeText(this, "No more timeouts available for Team A", Toast.LENGTH_SHORT).show();
+        }
+        checkBothTimeoutsUsed();
+
+    }
+
+    private void checkBothTimeoutsUsed() {
+        if (timeoutsUsed == 2) {
+            // Team A has used both timeouts, display a message
+            Toast.makeText(this, "Team A has used all timeouts", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void saveTimeoutButtonsState() {
+        SharedPreferences.Editor editor = getSharedPreferences("TeamAData", MODE_PRIVATE).edit();
+        editor.putBoolean("timeoutButton1Enabled", findViewById(R.id.TeamATimeOut1).isEnabled());
+        editor.putBoolean("timeoutButton2Enabled", findViewById(R.id.TeamATimeOut2).isEnabled());
+        editor.apply();
+    }
+
+
+
 }
+
+

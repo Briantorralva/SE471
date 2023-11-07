@@ -1,5 +1,15 @@
 package edu.csusm.volleybook;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.LinkedList;
+import java.util.List;
+
 public class PlayerLinkedList {
 
     public class Player {
@@ -43,6 +53,27 @@ public class PlayerLinkedList {
         while (current != null) {
             System.out.println("Player Name: " + current.getPlayerName());
             current = current.next;
+        }
+    }
+
+    public String toJson() {
+        List<String> playerNames = new LinkedList<>();
+        Player current = head;
+        while (current != null) {
+            playerNames.add(current.getPlayerName());
+            current = current.next;
+        }
+        Gson gson = new Gson();
+        return gson.toJson(playerNames);
+    }
+
+    // Deserialize player data from JSON
+    public void fromJson(String json) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {}.getType();
+        List<String> playerNames = gson.fromJson(json, type);
+        for (String playerName : playerNames) {
+            addPlayer(playerName);
         }
     }
 }
