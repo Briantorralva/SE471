@@ -47,5 +47,7 @@
     <string name="TeamA">Team A</string>
     <string name="iconDescription">icon</string>
     <string name="TeamB">Team B</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
