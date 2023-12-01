@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GamePage extends AppCompatActivity {
 
@@ -70,6 +71,21 @@ public class GamePage extends AppCompatActivity {
         //Launch Team B page
         Intent i = new Intent (this,TeamB.class);
         startActivity(i);
+    }
+
+    public void CreatePDFButton (View v){
+        //create PDF using iText
+        TeamA teamAInstance = new TeamA();
+        TeamB teamBInstance = new TeamB();
+
+        //gets the linked list for both teams
+        PlayerLinkedList teamAList = TeamA.getPlayerLinkedList();
+        PlayerLinkedList teamBList = TeamB.getPlayerLinkedListB();
+
+        // Call the createPDF method to generate the PDF
+        PDF.createPDF(teamAList, teamBList, this);
+        Toast.makeText(this, "Game Saved. PDF created", Toast.LENGTH_SHORT).show();
+
     }
 
 

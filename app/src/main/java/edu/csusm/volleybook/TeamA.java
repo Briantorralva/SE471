@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 public class TeamA extends AppCompatActivity {
-    private PlayerLinkedList playerLinkedList; // Declare PlayerLinkedList
+    private static PlayerLinkedList playerLinkedList; // Declare PlayerLinkedList
     private static final String PREFS_NAME = "TeamAData";
     private static final String JSON_FILE_NAME_A = "team_a_players.json";
 
@@ -172,6 +172,9 @@ public class TeamA extends AppCompatActivity {
         editor.apply();
     }
 
+    static PlayerLinkedList getPlayerLinkedList() {
+        return playerLinkedList;
+    }
 
 
 }

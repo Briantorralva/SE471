@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class TeamB extends AppCompatActivity {
 
-    private PlayerLinkedList playerLinkedListB; // Declare PlayerLinkedList
+    private static PlayerLinkedList playerLinkedListB; // Declare PlayerLinkedList
     private static final String PREFS_NAME = "TeamBData";
 
     private static final String JSON_FILE_NAME_B = "team_b_players.json";
@@ -171,6 +171,10 @@ public class TeamB extends AppCompatActivity {
         editor.putBoolean("timeoutButton1Enabled", findViewById(R.id.TeamBTimeOut1).isEnabled());
         editor.putBoolean("timeoutButton2Enabled", findViewById(R.id.TeamBTimeOut2).isEnabled());
         editor.apply();
+    }
+
+    public static PlayerLinkedList getPlayerLinkedListB() {
+        return playerLinkedListB;
     }
 
 }
