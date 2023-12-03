@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".TeamA">
 
+
     <Button
         android:id="@+id/ReturnButton"
-        android:layout_width="208dp"
-        android:layout_height="113dp"
+        android:layout_width="263dp"
+        android:layout_height="80dp"
         android:onClick="TeamAReturnButton"
-        android:text="Return"
+        android:text="< Return"
+        android:textColor="#070000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
-
+        app:layout_constraintVertical_bias="0.063" />
 
     <TableLayout
 
@@ -39,7 +41,7 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:background="#000000">
+            android:background="@color/black">
 
             <EditText
                 android:id="@+id/Box1"
@@ -47,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -59,7 +61,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -71,7 +73,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -91,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -103,7 +105,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -115,7 +117,7 @@
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_blue"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -131,9 +133,94 @@
         android:layout_height="90dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="76dp"
-        android:text="Add Players"
         android:onClick="savePlayers"
+        android:text="Save Players"
+        android:textColor="#070000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/TeamATimeOut1"
+        android:layout_width="271dp"
+        android:layout_height="78dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gray_out_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="TeamATimeOut1"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/timeout_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/timeout" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/Time_Out1"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeout_icon1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-47dp"
+            android:layout_marginEnd="-4dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Time Out"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TeamATimeOut2"
+        android:layout_width="269dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gray_out_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="TeamATimeOut2"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/timeout_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/timeout" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/Time_Out"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeout_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-44dp"
+            android:layout_marginEnd="-3dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Time Out"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

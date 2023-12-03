@@ -8,16 +8,18 @@
 
     <Button
         android:id="@+id/ReturnButton"
-        android:layout_width="206dp"
-        android:layout_height="107dp"
+        android:layout_width="248dp"
+        android:layout_height="74dp"
         android:onClick="TeamBReturnButton"
-        android:text="Return"
+        android:text="< Return"
+        android:textColor="#0C0000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TableLayout
 
@@ -41,36 +43,36 @@
             android:background="#000000">
 
             <EditText
-                android:id="@+id/Box1"
+                android:id="@+id/TeamBBox1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/Box2"
+                android:id="@+id/TeamBBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/Box3"
+                android:id="@+id/TeamBBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -85,36 +87,36 @@
             android:background="#000000">
 
             <EditText
-                android:id="@+id/Box4"
+                android:id="@+id/TeamBBox4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/Box5"
+                android:id="@+id/TeamBBox5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/Box6"
+                android:id="@+id/TeamBBox6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
+                android:background="@color/light_coral"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text=" Enter Player"
@@ -124,14 +126,98 @@
 
     </TableLayout>
 
+    <RelativeLayout
+        android:id="@+id/TeamBTimeOut1"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gray_out_background"
+        android:clickable="true"
+        android:onClick="TeamBTimeOut1"
+        android:focusable="true"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/timeout_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/timeout" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/Time_Out"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeout_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-47dp"
+            android:layout_marginEnd="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Time Out"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TeamBTimeOut2"
+        android:layout_width="311dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gray_out_background"
+        android:clickable="true"
+        android:onClick="TeamBTimeOut2"
+        android:focusable="true"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/TeamBtimeout_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iconDescription"
+            android:src="@drawable/timeout" />
+
+        <!-- Team Name -->
+        <TextView
+            android:id="@+id/TeamBTime_Out1"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TeamBtimeout_icon1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-47dp"
+            android:layout_marginEnd="51dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Time Out"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
     <Button
-        android:id="@+id/SaveButton"
+        android:id="@+id/TeamBSaveButton"
         android:layout_width="231dp"
         android:layout_height="90dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="76dp"
-        android:text="Add Players"
-        android:onClick="savePlayers"
+        android:onClick="SaveTeamBPlayers"
+        android:text="Save Players"
+        android:textColor="#050000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
