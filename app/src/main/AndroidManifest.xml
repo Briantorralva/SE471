@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VolleyBook"
         tools:targetApi="31">
         <activity
+            android:name=".DataEntryPage"
+            android:exported="false" />
+        <activity
             android:name=".StartUpPage"
             android:exported="true">
             <intent-filter>
