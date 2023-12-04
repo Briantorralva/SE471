@@ -8,15 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
 
 public class GamePage extends AppCompatActivity {
 
-    public int countA = 0;
-    public int countB = 0;
     private TextView valueTextViewA;
     private TextView valueTextViewB;
-    private Button incrementButton;
-    private Button decrementButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,70 +23,94 @@ public class GamePage extends AppCompatActivity {
         setContentView(R.layout.activity_game_page);
 
         valueTextViewA = findViewById(R.id.scoreA);
-        incrementButton = findViewById(R.id.plus_button1);
-
-        incrementButton.setOnClickListener(v -> {
-            countA++;
-            valueTextViewA.setText(String.valueOf(countA));
-        });
-
         valueTextViewB = findViewById(R.id.scoreB);
-        incrementButton = findViewById(R.id.plus_button2);
 
-        incrementButton.setOnClickListener(v -> {
-                countB++;
-            valueTextViewB.setText(String.valueOf(countB));
-        });
-
-        valueTextViewA = findViewById(R.id.scoreA);
-        incrementButton = findViewById(R.id.minus_button1);
-
-        incrementButton.setOnClickListener(v -> {
-            if(countA > 0)
-                countA--;
-            valueTextViewA.setText(String.valueOf(countA));
-        });
-
-        valueTextViewB = findViewById(R.id.scoreB);
-        incrementButton = findViewById(R.id.minus_button2);
-
-        incrementButton.setOnClickListener(v -> {
-            if(countB > 0)
-                countB--;
-            valueTextViewB.setText(String.valueOf(countB));
-        });
-
+        updateScoreDisplay(); // Update the initial score display
     }
 
-    public void TeamA (View v){
-        //launch Team A page
-        Intent i = new Intent(this,TeamA.class);
+    private void updateScoreDisplay() {
+        valueTextViewA.setText(String.valueOf(GlobalClass.getScoreTeamA()));
+        valueTextViewB.setText(String.valueOf(GlobalClass.getScoreTeamB()));
+    }
+
+    public void incrementScoreA(View v) {
+        GlobalClass.setScoreTeamA(GlobalClass.getScoreTeamA() + 1);
+        updateScoreDisplay();
+        if(GlobalClass.getScoreTeamA() >= 21)
+            GameOver(v);
+    }
+
+    public void decrementScoreA(View v) {
+        if (GlobalClass.getScoreTeamA() > 0) {
+            GlobalClass.setScoreTeamA(GlobalClass.getScoreTeamA() - 1);
+            updateScoreDisplay();
+        }
+    }
+
+    public void incrementScoreB(View v) {
+        GlobalClass.setScoreTeamB(GlobalClass.getScoreTeamB() + 1);
+        updateScoreDisplay();
+        if(GlobalClass.getScoreTeamB() >= 21)
+            GameOver(v);
+    }
+
+    public void decrementScoreB(View v) {
+        if (GlobalClass.getScoreTeamB() > 0) {
+            GlobalClass.setScoreTeamB(GlobalClass.getScoreTeamB() - 1);
+            updateScoreDisplay();
+        }
+    }
+
+    public void GameOver(View v) {
+        if (GlobalClass.getScoreTeamB() >= 21 || GlobalClass.getScoreTeamA() >= 21) {
+            String winningTeam = (GlobalClass.getScoreTeamA() > GlobalClass.getScoreTeamB()) ? "TeamA" : "TeamB";
+            String message = winningTeam + " has won!";
+
+            // Create an AlertDialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(message)
+                    .setTitle("Game Over")
+                    .setPositiveButton("End Game", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Redirect to the main page or perform any other action
+                            Intent intent = new Intent(GamePage.this, MainActivity.class);
+                            startActivity(intent);
+                            finish(); // Close the current activity
+                        }
+                    })
+                    .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Show the "End Game" button at the bottom of the page
+                            Button endGameButton = findViewById(R.id.endGameButton);
+                            endGameButton.setVisibility(View.VISIBLE);
+                            // Dismiss the dialog
+                            dialog.dismiss();
+                        }
+                    });
+            // Show the AlertDialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    }
+
+    public void endGame(View v) {
+        // Implement the logic for the "End Game" button
+        // For example, redirect to the main page or perform any other action
+        Intent intent = new Intent(GamePage.this, StartUpPage.class);
+        startActivity(intent);
+        finish(); // Close the current activity
+    }
+
+    public void TeamA(View v)
+    {
+        Intent i = new Intent(this, TeamA.class);
         startActivity(i);
-
-
     }
 
-    public void TeamB (View V){
-        //Launch Team B page
-        Intent i = new Intent (this,TeamB.class);
+    public void TeamB(View v)
+    {
+        Intent i = new Intent(this, TeamB.class);
         startActivity(i);
     }
-
-    public void CreatePDFButton (View v){
-        //create PDF using iText
-        TeamA teamAInstance = new TeamA();
-        TeamB teamBInstance = new TeamB();
-
-        //gets the linked list for both teams
-        PlayerLinkedList teamAList = TeamA.getPlayerLinkedList();
-        PlayerLinkedList teamBList = TeamB.getPlayerLinkedListB();
-
-        // Call the createPDF method to generate the PDF
-        PDF.createPDF(teamAList, teamBList, this);
-        Toast.makeText(this, "Game Saved. PDF created", Toast.LENGTH_SHORT).show();
-
-    }
-
-
 
 }

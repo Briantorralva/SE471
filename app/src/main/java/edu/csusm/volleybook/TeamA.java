@@ -10,6 +10,7 @@ import android.widget.EditText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 import android.widget.Toast;
 
@@ -30,18 +31,33 @@ public class TeamA extends AppCompatActivity {
         }
 
         // Load previously saved player names
-        loadPlayerNames();
+        //loadPlayerNames();
 
+        // Display the players from ActivePlayers_Blue in the EditText fields
+        displayPlayersFromActivePlayersBlue();
 
-        SharedPreferences prefs = getSharedPreferences("TeamAData", MODE_PRIVATE);
-        boolean isTimeoutButton1Enabled = prefs.getBoolean("timeoutButton1Enabled", true);
-        boolean isTimeoutButton2Enabled = prefs.getBoolean("timeoutButton2Enabled", true);
+        //SharedPreferences prefs = getSharedPreferences("TeamAData", MODE_PRIVATE);
+        boolean isTimeoutButton1Enabled = true;//prefs.getBoolean("timeoutButton1Enabled", true);
+        boolean isTimeoutButton2Enabled = true;//prefs.getBoolean("timeoutButton2Enabled", true);
 
         findViewById(R.id.TeamATimeOut1).setEnabled(isTimeoutButton1Enabled);
         findViewById(R.id.TeamATimeOut2).setEnabled(isTimeoutButton2Enabled);
 
 
 }
+
+    private void displayPlayersFromActivePlayersBlue() {
+        LinkedList<String> activePlayersBlue = GlobalClass.getActivePlayers_Blue();
+
+        // Assuming you have 6 EditText fields with IDs Box1, Box2, ..., Box6
+        for (int i = 0; i < Math.min(activePlayersBlue.size(), 6); i++) {
+            int resourceId = getResources().getIdentifier("Box" + (i + 1), "id", getPackageName());
+            EditText editText = findViewById(resourceId);
+
+            // Set the text from ActivePlayers_Blue into the EditText
+            editText.setText(activePlayersBlue.get(i));
+        }
+    }
 
     public void TeamAReturnButton(View v) {
         // Return to the game_page
@@ -73,6 +89,8 @@ public class TeamA extends AppCompatActivity {
 
         String json = playerLinkedList.toJson();
         saveJsonToFile(json, JSON_FILE_NAME_A);
+
+        TeamAReturnButton(view);
     }
 
     private void saveJsonToFile(String json, String fileName) {

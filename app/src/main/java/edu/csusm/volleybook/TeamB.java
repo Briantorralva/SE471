@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class TeamB extends AppCompatActivity {
@@ -33,15 +34,30 @@ public class TeamB extends AppCompatActivity {
         }
 
         // Load previously saved player names
-        loadPlayerNames();
+        //loadPlayerNames();
 
-        SharedPreferences prefs = getSharedPreferences("TeamBData", MODE_PRIVATE);
-        boolean isTimeoutButton1Enabled = prefs.getBoolean("timeoutButton1Enabled", true);
-        boolean isTimeoutButton2Enabled = prefs.getBoolean("timeoutButton2Enabled", true);
+        // Display the players from ActivePlayers_Red in the EditText fields
+        displayPlayersFromActivePlayersRed();
+
+        //SharedPreferences prefs = getSharedPreferences("TeamBData", MODE_PRIVATE);
+        boolean isTimeoutButton1Enabled = true;//prefs.getBoolean("timeoutButton1Enabled", true);
+        boolean isTimeoutButton2Enabled = true;//prefs.getBoolean("timeoutButton2Enabled", true);
 
         findViewById(R.id.TeamBTimeOut1).setEnabled(isTimeoutButton1Enabled);
         findViewById(R.id.TeamBTimeOut2).setEnabled(isTimeoutButton2Enabled);
 
+    }
+    private void displayPlayersFromActivePlayersRed() {
+        LinkedList<String> activePlayersRed = GlobalClass.getActivePlayers_Red();
+
+        // Assuming you have 6 EditText fields with IDs Box1, Box2, ..., Box6
+        for (int i = 0; i < Math.min(activePlayersRed.size(), 6); i++) {
+            int resourceId = getResources().getIdentifier("Box" + (i + 1), "id", getPackageName());
+            EditText editText = findViewById(resourceId);
+
+            // Set the text from ActivePlayers_Red into the EditText
+            editText.setText(activePlayersRed.get(i));
+        }
     }
     public void TeamBReturnButton (View v){
         //Return to Game page
@@ -74,6 +90,8 @@ public class TeamB extends AppCompatActivity {
         // Save player names to JSON for TeamB
         String json = playerLinkedListB.toJson();
         saveJsonToFile(json, JSON_FILE_NAME_B);
+        
+        TeamBReturnButton(view);
     }
 
     private void saveJsonToFile(String json, String fileName) {

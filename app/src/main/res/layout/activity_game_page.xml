@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".GamePage">
-
-    <!-- Box 2 -->
-
+    <!-- Box 1 -->
     <LinearLayout
         android:id="@+id/clickableBox"
-        android:layout_width="490dp"
-        android:layout_height="277dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="640dp"
-        android:layout_marginBottom="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/clickable_box_background"
         android:clickable="true"
         android:focusable="true"
@@ -41,29 +31,44 @@ tools:context=".GamePage">
             android:id="@+id/team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:paddingTop="8dp"
             android:text="@string/TeamA"
-            android:layout_gravity="center"
-            android:textSize="30sp" />
-
+            android:textSize="24sp" />
 
         <!-- Plus and Minus Buttons for Box 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/plus_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="@color/Ebony"
+                android:textSize="24sp"
+                android:onClick="incrementScoreA" />
+
+            <Button
+                android:id="@+id/minus_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/Ebony"
+                android:textSize="24sp"
+                android:onClick="decrementScoreA" />
+        </LinearLayout>
     </LinearLayout>
 
+    <!-- Box 2 -->
     <LinearLayout
         android:id="@+id/clickableBox2"
-        android:layout_width="490dp"
-        android:layout_height="280dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="640dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/clickable_box_background2"
         android:clickable="true"
         android:focusable="true"
@@ -82,131 +87,86 @@ tools:context=".GamePage">
         <!-- Team Name -->
         <TextView
             android:id="@+id/team_name2"
-            android:layout_width="131dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed-medium"
             android:paddingTop="8dp"
             android:text="@string/TeamB"
-            android:layout_gravity="center"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <!-- Plus and Minus Buttons for Box 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/plus_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="@color/Ebony"
+                android:textSize="24sp"
+                android:onClick="incrementScoreB"/>
+
+            <Button
+                android:id="@+id/minus_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/Ebony"
+                android:textSize="24sp"
+                android:onClick="decrementScoreB"/>
+        </LinearLayout>
     </LinearLayout>
 
+    <!-- Score Views -->
     <LinearLayout
-        android:layout_width="204dp"
-        android:layout_height="67dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="299dp"
-        android:layout_marginTop="264dp"
-        android:gravity="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
-        <!-- Minus Button -->
-
-        <!-- Plus Button -->
-        <Button
-            android:id="@+id/minus_button1"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/scoreA"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textColor="@color/Ebony"
-            android:textSize="30sp"
-            />
+            android:layout_weight="1"
+            android:background="@drawable/clickable_box_background"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/plus_button1"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/scoreB"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textColor="@color/Ebony"
-            android:textSize="30sp"
-             />
+            android:layout_weight="1"
+            android:background="@drawable/clickable_box_background2"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="24sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="238dp"
-        android:layout_height="58dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="264dp"
-        android:layout_marginEnd="299dp"
-        android:gravity="end"
-        android:orientation="horizontal">
-
-        <!-- Minus Button -->
-        <Button
-            android:id="@+id/minus_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textColor="@color/Ebony"
-            android:textSize="30sp"
-            />
-
-        <!-- Plus Button -->
-        <Button
-            android:id="@+id/plus_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textColor="@color/Ebony"
-            android:textSize="30sp"
-            />
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/scoreA"
-        android:layout_width="159dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="481dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="640dp"
-        android:layout_marginBottom="755dp"
-        android:background="@drawable/clickable_box_background"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/scoreB"
-        android:layout_width="151dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="640dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="481dp"
-        android:layout_marginBottom="755dp"
-        android:background="@drawable/clickable_box_background2"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="30sp" />
-
+    <!-- Save Game Button -->
     <Button
         android:id="@+id/CreatePDFButton"
-        android:layout_width="215dp"
-        android:layout_height="88dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="71dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:onClick="CreatePDFButton"
         android:text="Save Game"
         android:textColor="#100000" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/endGameButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="End Game"
+        android:onClick="endGame" />
 
-
-
+</LinearLayout>

@@ -17,7 +17,30 @@ public class GlobalClass {
     private static List<String> firstPointsServed = new ArrayList<>();
     // Static list to keep track of rally points scored
     private static List<String> rallyPoints = new ArrayList<>();
+    private static int scoreTeamA = 0;
+    private static int scoreTeamB = 0;
 
+
+    // Method to set player names from DataEntryPage
+    public static void setPlayerNames(List<String> playerNames) {
+        // Assuming the order of playerNames list corresponds to the order of players in the global class
+        int size = Math.min(playerNames.size(), ActivePlayers_Blue.size() +
+                BenchPlayer_Blue.size() + ActivePlayers_Red.size() + BenchPlayer_Red.size());
+
+        for (int i = 0; i < size; i++) {
+            if (i < ActivePlayers_Blue.size()) {
+                ActivePlayers_Blue.set(i, playerNames.get(i));
+            } else if (i < ActivePlayers_Blue.size() + BenchPlayer_Blue.size()) {
+                BenchPlayer_Blue.set(i - ActivePlayers_Blue.size(), playerNames.get(i));
+            } else if (i < ActivePlayers_Blue.size() + BenchPlayer_Blue.size() +
+                    ActivePlayers_Red.size()) {
+                ActivePlayers_Red.set(i - ActivePlayers_Blue.size() - BenchPlayer_Blue.size(), playerNames.get(i));
+            } else {
+                BenchPlayer_Red.set(i - ActivePlayers_Blue.size() - BenchPlayer_Blue.size() -
+                        ActivePlayers_Red.size(), playerNames.get(i));
+            }
+        }
+    }
 
     // Getter and Setter for Team 1
     public static LinkedList<String> getActivePlayers_Blue() {
@@ -116,6 +139,24 @@ public class GlobalClass {
                 activePlayers.add(BenchPlayerName);
             }
         }
+    }
+
+    // Getter and Setter for Team A score
+    public static int getScoreTeamA() {
+        return scoreTeamA;
+    }
+
+    public static void setScoreTeamA(int score) {
+        scoreTeamA = score;
+    }
+
+    // Getter and Setter for Team B score
+    public static int getScoreTeamB() {
+        return scoreTeamB;
+    }
+
+    public static void setScoreTeamB(int score) {
+        scoreTeamB = score;
     }
 
 }
