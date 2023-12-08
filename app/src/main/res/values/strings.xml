@@ -50,4 +50,77 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="volleyball_rules">
+        <![CDATA[
+        Volleyball Rules
+
+        Here are the fundamental, must-know rules of a volleyball game:
+
+        - Only 6 players on the floor at any given time: 3 in the front row and 3 in the back row.
+        - Points are made on every serve for the winning team of the rally (rally-point scoring).
+        - Players may not hit the ball twice in succession (a block is not considered a hit).
+        - Ball may be played off the net during a volley and on a serve.
+        - A ball hitting a boundary line is in.
+        - A ball is out if it hits an antennae, the floor completely outside the court, any of the net or cables outside the antennae, the referee stand or pole, or the ceiling above a non-playable area.
+        - It is legal to contact the ball with any part of a player’s body.
+        - It is illegal to catch, hold or throw the ball.
+        - A player cannot block or attack a serve from on or inside the 10-foot line.
+        - After the serve, front-line players may switch positions at the net.
+        - Matches are made up of sets; the number depends on the level of play.
+
+        Volleyball Rule Violations
+
+        Committing any of these volleyball rule violations results in a point for the opponent.
+
+        - Stepping on or across the service line when serving while making contact with the ball.
+        - Failure to serve the ball over the net successfully.
+        - Ball-handling errors and contacting the ball illegally (double touching, lifting, carrying, throwing, etc.)
+        - Touching the net with any part of the body while the ball is in play.
+        - Blocking a ball coming from the opponent’s court and contacting the ball when reaching over the net if your opponent has not used 3 contacts AND has a player there to make a play on the ball.
+        - Attacking a ball coming from the opponent’s court and contacting the ball when reaching over the net when the ball has not yet broken the vertical plane of the net.
+        - Crossing the court centerline with any part of your body, with the exception of a hand or foot. It is only considered a violation if the entire hand or entire foot crosses the court centerline.
+        - Serving out of rotation or out of order.
+        - Back row player blocking (deflecting a ball coming from the opponent) when, at the moment of contact, the back row player is near the net and has part of their body above the top of the net. This is an illegal block.
+        - Back row player attacking a ball inside the front zone (the area inside the 3M/10-foot line) when, at the moment of contact, the ball is completely above the net. This is an illegal attack.
+        \n
+        \n
+        \n
+        \n
+        \n
+        \n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ]]>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </string>
+
 </resources>

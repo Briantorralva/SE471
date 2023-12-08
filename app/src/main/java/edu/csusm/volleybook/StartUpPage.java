@@ -19,4 +19,10 @@ public class StartUpPage extends AppCompatActivity {
         Intent i = new Intent(this, DataEntryPage.class);
         startActivity(i);
     }
+
+    public void showRules(View view) {
+
+        Intent intent = new Intent(this, PDF_Viewer.class);
+        startActivity(intent);
+    }
 }
