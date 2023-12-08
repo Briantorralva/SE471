@@ -4,24 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataEntryPage">
-
-    <Button
-        android:id="@+id/ReturnButton"
-        android:layout_width="206dp"
-        android:layout_height="107dp"
-        android:onClick="TeamBReturnButton"
-        android:text="Return"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".DataEntry">
 
     <TableLayout
 
-        android:layout_width="500dp"
-        android:layout_height="300dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="300dp"
         android:gravity="center"
         android:stretchColumns="0,1,2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +37,7 @@
                 android:background="#BC544B"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text=" Enter Player"
+                android:text="Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
@@ -137,7 +126,7 @@
                 android:background="#50E2FF"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text=" Enter Player"
+                android:text="Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
@@ -215,11 +204,10 @@
         android:id="@+id/ContinueButton"
         android:layout_width="231dp"
         android:layout_height="90dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="52dp"
         android:onClick="StartGame"
         android:text="Start Game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

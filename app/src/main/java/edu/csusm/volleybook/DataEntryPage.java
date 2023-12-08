@@ -49,7 +49,7 @@ public class DataEntryPage extends AppCompatActivity {
         teamAPlayerNames.add(box6.getText().toString());
 
         // Set player names for Team A in GlobalClass
-        GlobalClass.setActivePlayers_Blue(new LinkedList<>(teamAPlayerNames));
+        GlobalClass.setActivePlayers_Red(new LinkedList<>(teamAPlayerNames));
 
         // Retrieve player names for Team B
         EditText boxB1 = findViewById(R.id.BoxB1);
@@ -68,6 +68,6 @@ public class DataEntryPage extends AppCompatActivity {
         teamBPlayerNames.add(boxB6.getText().toString());
 
         // Set player names for Team B in GlobalClass
-        GlobalClass.setActivePlayers_Red(new LinkedList<>(teamBPlayerNames));
+        GlobalClass.setActivePlayers_Blue(new LinkedList<>(teamBPlayerNames));
     }
 }
