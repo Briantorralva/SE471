@@ -14,7 +14,7 @@ public class PlayerLinkedList {
 
     public class Player {
         private String playerName;
-         Player next;
+        Player next;
         private Player prev;
 
         public Player(String playerName) {

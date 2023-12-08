@@ -48,7 +48,7 @@
                 android:background="#BC544B"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text=" Enter Player"
+                android:text="Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
@@ -137,7 +137,7 @@
                 android:background="#50E2FF"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
-                android:text=" Enter Player"
+                android:text="Player"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText

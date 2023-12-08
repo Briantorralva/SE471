@@ -90,7 +90,7 @@ public class TeamA extends AppCompatActivity {
         String json = playerLinkedList.toJson();
         saveJsonToFile(json, JSON_FILE_NAME_A);
 
-        TeamAReturnButton(view);
+        //TeamAReturnButton(view);
     }
 
     private void saveJsonToFile(String json, String fileName) {

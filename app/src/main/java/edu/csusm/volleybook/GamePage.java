@@ -11,6 +11,8 @@ import android.widget.Toast;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
+import java.util.LinkedList;
+
 
 public class GamePage extends AppCompatActivity {
 
@@ -112,5 +114,16 @@ public class GamePage extends AppCompatActivity {
         Intent i = new Intent(this, TeamB.class);
         startActivity(i);
     }
+
+
+    public void CreatePDFButton(View v) {
+        // Create PDF using iText
+        PDF.createPDF(this, true);
+        Toast.makeText(this, "Game Saved. PDF created", Toast.LENGTH_SHORT).show();
+
+    }
+
+
+
 
 }
