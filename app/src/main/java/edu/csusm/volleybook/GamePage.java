@@ -75,9 +75,7 @@ public class GamePage extends AppCompatActivity {
                     .setPositiveButton("End Game", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             // Redirect to the main page or perform any other action
-                            Intent intent = new Intent(GamePage.this, MainActivity.class);
-                            startActivity(intent);
-                            finish(); // Close the current activity
+                            endGame(v);
                         }
                     })
                     .setNegativeButton("Close", new DialogInterface.OnClickListener() {
@@ -96,12 +94,9 @@ public class GamePage extends AppCompatActivity {
     }
 
     public void endGame(View v) {
-        // Implement the logic for the "End Game" button
-        // For example, redirect to the main page or perform any other action
+
         CreatePDFButton(v);
-        Intent intent = new Intent(GamePage.this, StartUpPage.class);
-        startActivity(intent);
-        finish(); // Close the current activity
+        finishAffinity(); // Close the entire app
     }
 
     public void TeamA(View v)
