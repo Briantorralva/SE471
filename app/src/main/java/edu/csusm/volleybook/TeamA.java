@@ -10,7 +10,9 @@ import android.widget.EditText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import android.widget.Toast;
 
@@ -85,12 +87,12 @@ public class TeamA extends AppCompatActivity {
         savePlayerNames(playerNames);
 
         // Display the players (optional)
-        playerLinkedList.displayPlayers();
+        //playerLinkedList.displayPlayers();
 
         String json = playerLinkedList.toJson();
         saveJsonToFile(json, JSON_FILE_NAME_A);
 
-        //TeamAReturnButton(view);
+        TeamAReturnButton(view);
     }
 
     private void saveJsonToFile(String json, String fileName) {
@@ -106,11 +108,14 @@ public class TeamA extends AppCompatActivity {
 
     public void savePlayerNames(String[] playerNames) {
         SharedPreferences.Editor editor = getSharedPreferences("TeamAData", MODE_PRIVATE).edit();
-
+        List<String> teamAPlayerNames = new ArrayList<>();
         for (int i = 0; i < playerNames.length; i++) {
+            teamAPlayerNames.add(playerNames[i]);
             editor.putString("player" + i, playerNames[i]);
         }
         editor.apply();
+
+        GlobalClass.setActivePlayers_Blue(new LinkedList<>(teamAPlayerNames));
     }
 
     private void loadPlayerNames() {

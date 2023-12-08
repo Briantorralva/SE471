@@ -12,7 +12,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TeamB extends AppCompatActivity {
@@ -68,6 +70,7 @@ public class TeamB extends AppCompatActivity {
     public void SaveTeamBPlayers (View view){
         // Retrieve player names from EditText fields
         String[] playerNames = new String[6];
+
         for (int i = 1; i <= 6; i++) {
             int resourceId = getResources().getIdentifier("TeamBBox" + i, "id", getPackageName());
             EditText editText = findViewById(resourceId);
@@ -85,13 +88,13 @@ public class TeamB extends AppCompatActivity {
         savePlayerNames(playerNames);
 
         // Display the players (optional)
-        playerLinkedListB.displayPlayers();
+        //playerLinkedListB.displayPlayers();
 
         // Save player names to JSON for TeamB
-        String json = playerLinkedListB.toJson();
-        saveJsonToFile(json, JSON_FILE_NAME_B);
+        //String json = playerLinkedListB.toJson();
+        //saveJsonToFile(json, JSON_FILE_NAME_B);
         
-        //TeamBReturnButton(view);
+        TeamBReturnButton(view);
     }
 
     private void saveJsonToFile(String json, String fileName) {
@@ -108,10 +111,14 @@ public class TeamB extends AppCompatActivity {
 
     public void savePlayerNames(String[] playerNames) {
         SharedPreferences.Editor editor = getSharedPreferences("TeamBData", MODE_PRIVATE).edit();
+        List<String> teamBPlayerNames = new ArrayList<>();
         for (int i = 0; i < playerNames.length; i++) {
+            teamBPlayerNames.add(playerNames[i]);
             editor.putString("player" + i, playerNames[i]);
         }
         editor.apply();
+
+        GlobalClass.setActivePlayers_Red(new LinkedList<>(teamBPlayerNames));
     }
 
     private void loadPlayerNames() {

@@ -28,6 +28,6 @@ public class StartUpPage extends AppCompatActivity {
 
     public void CloseApplication(View view)
     {
-        finish();
+        finishAffinity();
     }
 }
