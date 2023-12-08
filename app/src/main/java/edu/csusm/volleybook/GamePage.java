@@ -98,6 +98,7 @@ public class GamePage extends AppCompatActivity {
     public void endGame(View v) {
         // Implement the logic for the "End Game" button
         // For example, redirect to the main page or perform any other action
+        CreatePDFButton(v);
         Intent intent = new Intent(GamePage.this, StartUpPage.class);
         startActivity(intent);
         finish(); // Close the current activity

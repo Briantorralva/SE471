@@ -25,4 +25,9 @@ public class StartUpPage extends AppCompatActivity {
         Intent intent = new Intent(this, PDF_Viewer.class);
         startActivity(intent);
     }
+
+    public void CloseApplication(View view)
+    {
+        finish();
+    }
 }
