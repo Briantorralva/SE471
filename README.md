@@ -2,10 +2,13 @@
 This is a project meant for CS 370 at CSUSM. 
 
 * VolleyBook
-*      VolleyBook, the modern, digital version of the traditional volleyball score sheet. Designed to simplify and accurately maintain records, VolleyBook offers a comprehensive solution for scorekeeping in volleyball games. With features like precise score recording, real-time lineup and position updates, and the ability to generate a PDF of game statistics and scores, VolleyBook ensures accuracy and ease of use. Traditional paper score sheets often lead to inaccuracies, especially during crucial moments like challenging calls, points, and substitutions. VolleyBook addresses and resolves these issues with its intuitive and accessible interface, making it the perfect solution for modernizing your game management and ensuring precise, reliable scorekeeping.  
+*  VolleyBook, the modern, digital version of the traditional volleyball score sheet. Designed to simplify and accurately maintain records, VolleyBook offers a comprehensive solution for scorekeeping in volleyball games. With features like precise score recording, real-time lineup and position updates, and the ability to generate a PDF of game statistics and scores, VolleyBook ensures accuracy and ease of use. Traditional paper score sheets often lead to inaccuracies, especially during crucial moments like challenging calls, points, and substitutions. VolleyBook addresses and resolves these issues with its intuitive and accessible interface, making it the perfect solution for modernizing your game management and ensuring precise, reliable scorekeeping.  
 
 * Purpose
-*      VolleyBook is designed to be an interface to replace the current pen and paper method of recording Volleyball games. It will be developed as an android mobile application for greater accessibility. The app will take in all data points necessary for officiating a volleyball match from the user, including players and score, and once the game concludes, a pdf will be created with the game summary. Volleybook looks to be a reliable and efficient way to simplify and automate refereeing.
+*  VolleyBook is designed to be an interface to replace the current pen and paper method of recording Volleyball games.
+*  It will be developed as an android mobile application for greater accessibility.
+*  The app will take in all data points necessary for officiating a volleyball match from the user, including players and score, and once the game concludes, a pdf will be created with the game summary.
+*  Volleybook looks to be a reliable and efficient way to simplify and automate refereeing.
      
 * Android Native with Android Jetpack:
     * Android Jetpack provides a set of libraries and tools that can help you efficiently build and manage your Android app.
